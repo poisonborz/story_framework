@@ -1,21 +1,21 @@
 ## Story Framework
 
-######_This is an archived project from 2014. It is showcased here for inspiration, and because I think this was a cool idea, that in many respects is still a great approach for the usage scenario._
+###### _This is an archived project from 2014. It is showcased here for inspiration, and because I think this was a cool idea, that in many respects is still a great approach for the usage scenario._
 
 A SCORM-compatible web presentation framework using [GSAP](https://greensock.com/gsap) animation definitions, flexible translation templates and art directable components. 
 The scheme of the presentation content enables it to be generateable/composable. 
 It was designed to supply content for e-learning platforms and courses, kiosks and microsite campaigns.
 
-####The supplied example presentation is only barebones for easier understanding (and contractual obligations :P) but I compiled a **[demo reel video](https://github.com/poisonborz/story_framework/raw/master/showcase.mp4)** with the possibilities.
+#### The supplied example presentation is only barebones for easier understanding (and contractual obligations :P) but I compiled a **[demo reel video](https://github.com/poisonborz/story_framework/raw/master/showcase.mp4)** with the possibilities.
 
 
 
-####Quick Guide
+#### Quick Guide
 The framework consists of a scaffolding (preloader, selectable components like control UI, interactive exam, displayed on an autoscaled 1000x660px stage) 
 and training content (media assets, styling, translated templates and animation definitions).
 
 
-#####Overall structure
+##### Overall structure
 
 The presentation is structured this way:
 
@@ -28,7 +28,7 @@ The presentation is structured this way:
        - States (separated paused states of movement, like stopgaps for a description to appear, or selectable states like clickable buttons with tooltips)
               
  
- #####Content
+ ##### Content
  The content folder supplies all the assets needed for the presentation.
  
  
