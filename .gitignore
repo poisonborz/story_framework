@@ -9,4 +9,3 @@ prepros.cfg
 node_modules/**
 gruntfile.js
 package.json
-README.md
