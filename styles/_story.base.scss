@@ -1,0 +1,214 @@
+
+html, body, div {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    font-family: $base-font-stack;
+    font-size: $base-font-size;
+    color: $base-font-color;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    &.mode-reader {
+        height: auto;
+        position: static !important;
+        max-height: none;
+
+        [data-for="presentation"] {
+            display: none !important;
+        }
+    }
+
+    &.mode-presentation {
+        position: fixed;
+
+        [data-for="reader"] {
+            display: none !important;
+        }
+    }
+
+}
+
+.brandcolor-0-color { color: $brandcolor-0 }
+.brandcolor-1-color { color: $brandcolor-1 }
+.brandcolor-2-color { color: $brandcolor-2 }
+.brandcolor-3-color { color: $brandcolor-3 }
+.brandcolor-4-color { color: $brandcolor-4 }
+
+.brandcolor-0-backgroundcolor { background-color: $brandcolor-0 }
+.brandcolor-1-backgroundcolor { background-color: $brandcolor-1 }
+.brandcolor-2-backgroundcolor { background-color: $brandcolor-2 }
+.brandcolor-3-backgroundcolor { background-color: $brandcolor-3 }
+.brandcolor-4-backgroundcolor { background-color: $brandcolor-4 }
+
+
+*, *:before, *:after {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+
+p, h1, h2, h3, h4, h5, h6 span, img {
+    backface-visibility: hidden;
+    @extend .noselect;
+}
+
+
+#meta {
+    display: none;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    user-drag: none;
+}
+
+#storyUi {
+    /* only show when loaded */
+    display: none;
+}
+
+#story {
+    width: 100%;
+    height: 100%;
+
+    .chapter {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+
+        .scene {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            visibility: hidden !important;
+
+            &.active {
+                visibility: visible !important;
+            }
+
+            .content {
+                perspective: 1000px;
+                position: absolute;
+                width: $presentation-width;
+                height: $presentation-height;
+                left: 50%;
+                top: 50%;
+                margin-left: -$presentation-width/2;
+                margin-top: -332px;
+                outline: 2px dashed rgba(dimgrey, .3);
+            }
+
+        }
+
+    }
+}
+
+.chapter > .title,
+.scene > .title {
+    display: none;
+}
+
+
+
+
+//Noscript warning
+.noscript {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top:0;
+    left: 0;
+    text-align: center;
+    white-space: nowrap;
+
+    &:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+
+    .wrap {
+        width: 300px;
+        display: inline-block;
+        vertical-align: middle;
+
+        .noscriptGraph {
+            font-size:30px;
+            margin-bottom: 10px;
+
+            span {
+                display:inline-block;
+                vertical-align: middle;
+                border:4px solid $black;
+                padding:3px 30px 3px 3px;
+                margin-left: 12px;
+
+                i {
+                    width: 20px;
+                    height: 20px;
+                    background: $black;
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+
+
+body.mode-reader {
+
+    #story {
+        width: 350px;
+        position: absolute;
+        margin: 0 0;
+        height: auto;
+        min-height: 100%;
+        transform-origin:top left;
+
+        .chapter {
+            width: auto;
+            height: auto;
+            position: absolute;
+            top:0;
+            margin: 0 0;
+            transform-origin: top center;
+
+            .scene {
+                height: auto;
+                position: absolute;
+                display: none;
+
+                &.active {
+                    display: block;
+                }
+
+                .content {
+                    width: $reader-width;
+                    perspective: 1000px;
+                    min-height: 100%;
+                    margin: 0 0 0;
+                    padding-bottom: 50px;
+                    position: static;
+                    transform-origin: left top;
+                    height: auto;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+}
+

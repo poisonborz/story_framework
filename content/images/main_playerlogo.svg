@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   data-name="Layer 2"
+   viewBox="0 0 500 500"
+   x="0px"
+   y="0px"
+   version="1.1"
+   id="svg4493"
+   sodipodi:docname="main_playerlogo.svg"
+   width="500"
+   height="500"
+   inkscape:version="0.92.1 r15371">
+  <metadata
+     id="metadata4499">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Sounds_Icon_Grid</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs4497" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="2560"
+     inkscape:window-height="1387"
+     id="namedview4495"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="0.3337544"
+     inkscape:cx="427.17584"
+     inkscape:cy="-796.32763"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4493" />
+  <title
+     id="title4485">Sounds_Icon_Grid</title>
+  <path
+     d="M 440.62498,500 H 59.374995 A 59.437495,72.045452 0 0 1 0,428.0303 V 71.9697 A 59.437495,72.045452 0 0 1 59.374995,0 H 440.62498 A 59.437495,72.045452 0 0 1 500,71.9697 V 428.0303 A 59.437495,72.045452 0 0 1 440.62498,500 Z M 59.374995,45.45455 A 21.874999,26.515151 0 0 0 37.499998,71.9697 v 356.0606 a 21.874999,26.515151 0 0 0 21.874997,26.51516 H 440.62498 a 21.874999,26.515151 0 0 0 21.875,-26.51516 V 71.9697 a 21.874999,26.515151 0 0 0 -21.875,-26.51515 z M 418.74999,401.51516 H 93.749999 a 18.749999,22.727273 0 0 1 0,-45.45455 H 418.74999 a 18.749999,22.727273 0 0 1 0,45.45455 z M 200.9375,318.18182 A 31.249999,37.878788 0 0 1 185.8125,313.33333 20.999999,25.454546 0 0 1 175,291.4394 V 122.80303 a 20.874999,25.30303 0 0 1 10.75,-21.81818 28.749999,34.848485 0 0 1 26.74999,-1.66666 l 120.25,79.54545 a 28.187499,34.166667 0 0 1 14.5625,29.16667 24.249999,29.39394 0 0 1 -12.5,25.98484 l -123,80.98485 a 22.062499,26.742424 0 0 1 -10.87499,3.18182 z m -6.75001,-43.33333 h -0.49999 z m 18.3125,-123.33334 v 111.36364 l 84.625,-55.68182 z M 194.25,139.4697 h 0.3125 z"
+     id="path4487"
+     inkscape:connector-curvature="0"
+     style="stroke-width:6.88102341" />
+</svg>

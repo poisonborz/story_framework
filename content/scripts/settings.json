@@ -1,0 +1,10 @@
+{
+    "lightpreloadui": false,
+    "localExamInsteadOfScorm": true,
+    "disableExam": true,
+    "showFeedbackAtEnd": true,
+    "headlessMode":false,
+    "translationsFromJson":false,
+    "trackingid":"",
+    "modules":"StoryUiPlayer,StoryTrigger,StoryVideo"
+}

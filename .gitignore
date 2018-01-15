@@ -1,0 +1,12 @@
+.idea
+prepros.cfg
+*.iml
+*.ipr
+*.iws
+*.sublime-project
+*.map
+.DS_Store
+node_modules/**
+gruntfile.js
+package.json
+README.md

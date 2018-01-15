@@ -1,0 +1,22 @@
+{
+	"text_storytemplateError":"An error occured, try to reload the training, if the problem persists, please refer to website support",
+	"text_storytemplateNonet1":"No internet connection detected.",
+	"text_storytemplateNonet2":"Connect your device and reload <br/> to start the play.",
+	"text_storytemplateSubtitle":"story module",
+	"text_storytemplateLoading":"Loading",
+	"text_storytemplateSee":"See what this module covers",
+	"text_storytemplateFullscreen1":"click here",
+	"text_storytemplateFullscreen2":"or press F11 on your keyboard to enter full screen mode",
+	"text_storytemplateFullscreen3":"press F11 on your keyboard to enter full screen mode",
+	"text_storytemplateFullscreen4":"tap here to enter full screen mode",
+	"text_storytemplatePleasewait":"Please wait while the content is loading",
+	"text_storytemplateBegin":"Let's begin",
+	"text_storytemplateTurndevice":"Please turn your device <br/>for an optimal experience",
+
+    "text_preloadModule":"training module",
+    "text_preloadLoading":"Loading",
+    "text_preloadSeewhatthis":"Let's begin",
+    "text_preloadClick":"click here",
+    "text_preloadFullscreen":"or press F11 on your keyboard to enter full screen mode",
+    "zext_preloadFullscreenmobile":"tap here to enter full screen mode"
+}

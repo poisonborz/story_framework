@@ -1,0 +1,32 @@
+
+//dimensions
+$presentation-width:1024px;
+$presentation-height:660px;
+$reader-width:350px;
+
+//colors
+$brandcolor-0: rgb(139, 43, 139) !default;
+$brandcolor-1: #0477a8 !default;
+$brandcolor-2: #4a9c33 !default;
+$brandcolor-3: #000 !default;
+$brandcolor-4: #000 !default;
+$context-0: rgb(241, 241, 241) !default;
+$context-1: rgb(208, 208, 208) !default;
+$context-2: rgb(179,179,179) !default;
+$context-3: rgb(148, 148, 148) !default;
+$white: rgb(255,255,255) !default;
+$black: rgb(35,31,32)!default;
+$alert: rgb(156,54,42) !default;
+
+//typography
+$base-font-stack: 'OpenSans',arial, sans-serif !default;
+$base-font-color: $black !default;
+$base-font-size: 14px !default;
+
+//breakpoints
+$desktophd: "(min-width:1300px)" !default;
+$desktopsmall: "(max-width:1100px)" !default;
+$tablet: "(max-width:1030px)" !default;
+$phone: "(max-width:600px)" !default;
+$landscape: "(orientation:landscape)" !default;
+

@@ -1,0 +1,814 @@
+
+
+//Exam colors
+$exam-grey: rgb(226,228,239);
+$exam-red: rgb(169,18,35);
+$exam-green: rgb(70,215,109);
+$exam-darkgreen: rgb(58,195,107);
+$exam-blue: rgb(84,167,218);
+$exam-darkblue: rgb(53,96,141);
+
+
+#exam {
+    width: 100%;
+    height: 0;
+    position: fixed;
+    top:0;
+    left: 0;
+    z-index: 100;
+
+    .wrap {
+        width: 100%;
+        height: 100%;
+
+        > * {
+            width: 100%;
+            height: 0;
+            position: absolute;
+        }
+    }
+
+    .templates, .strings {
+        height: 0 !important;
+        overflow: hidden;
+    }
+
+
+
+    .report {
+        z-index: 10;
+        height: auto;
+        background: #f9faff;
+
+        > * {
+            transform: scale(0);
+        }
+
+        .radial-progress {
+            $circle-size: 410px;
+            $circle-background: #f9faff;
+            $inset-size: 390px;
+            $inset-color: #f9faff;
+            width:  $circle-size;
+            height: $circle-size;
+            background-color: $circle-background;
+            border-radius: 50%;
+            z-index: 10;
+            @extend .centered;
+
+            .circle {
+
+                .mask, .fill {
+                    width:    $circle-size;
+                    height:   $circle-size;
+                    position: absolute;
+                    border-radius: 50%;
+                }
+
+                .mask, .fill {
+                    -webkit-backface-visibility: hidden;
+                    border-radius: 50%;
+                }
+                .mask {
+                    clip: rect(0px, $circle-size, $circle-size, $circle-size/2);
+                    .fill {
+                        clip: rect(0px, $circle-size/2, $circle-size, 0px);
+                    }
+
+                    .fill0 {
+                        background-color: $exam-grey;
+                    }
+
+                    .fill1 {
+                        background-color: $exam-green;
+                    }
+
+                    .fill2 {
+                        background-color: $exam-red;
+                    }
+                }
+
+                &.circle-mirror {
+                    transform: scale(-1, 1);
+                }
+
+            }
+            .inset {
+                width:       $inset-size;
+                height:      $inset-size;
+                position:    absolute;
+                margin-left: ($circle-size - $inset-size)/2;
+                margin-top:  ($circle-size - $inset-size)/2;
+
+                background-color: $inset-color;
+                border-radius: 50%;
+                z-index: 200;
+
+            }
+
+
+            //any way to make this prettier?
+            @media #{$phone} {
+                $circle-size: 290px;
+                $inset-size: 265px;
+                width: $circle-size;
+                height: $circle-size;
+
+                .circle {
+                    .mask, .fill {
+                        width:    $circle-size;
+                        height:   $circle-size;
+                    }
+                    .mask {
+                        clip: rect(0px, $circle-size, $circle-size, $circle-size/2);
+                        .fill {
+                            clip: rect(0px, $circle-size/2, $circle-size, 0px);
+                        }
+                    }
+                }
+
+
+                .inset {
+                    width: $inset-size;
+                    height: $inset-size;
+                    margin-left: ($circle-size - $inset-size)/2;
+                    margin-top: ($circle-size - $inset-size)/2;
+                }
+
+            }
+
+
+        }
+
+
+        .doodle {
+            width: 250px;
+            height: 250px;
+            z-index: 20;
+            @extend .centered;
+
+            .wrap > * {
+                position: absolute;
+            }
+
+            .circle {
+                width: 1000px;
+                height: 1000px;
+                top:-376px;
+                left:-376px;
+                border-radius:1000px;
+                background: $exam-green;
+            }
+
+            .anim {
+                width: 250px;
+                height: 250px;
+                position: relative;
+
+                > * {
+                    position: absolute;
+                }
+            }
+
+        }
+
+        .midscore {
+            width: 100px;
+            height: 20px;
+            font-size:32px;
+            font-weight: bold;
+            text-align: center;
+            color:$exam-blue;
+            z-index: 30;
+            bottom:-250px;
+            letter-spacing: 2pt;
+            @extend .centered;
+        }
+
+        .result {
+            width: 300px;
+            height: 300px;
+            z-index: 100;
+            @extend .centered;
+
+            .message {
+                width: 90%;
+                height: 90px;
+                position: absolute;
+                top:10px;
+                left:5%;
+                opacity: 0;
+                text-align: center;
+                color:$exam-blue;
+                font-size:22px;
+                line-height: 22px;
+                font-weight:bold;
+                display: table;
+
+                p {
+                    display: table-cell;
+                    vertical-align: middle;
+                }
+
+                @media #{$phone} {
+                    width: 60%;
+                    height: 76px;
+                    top: 47px;
+                    left:20%;
+                    font-size: 18px;
+                    line-height: 18px;
+                }
+            }
+
+            .star {
+                width: 80px;
+                height: 80px;
+                position: absolute;
+                top:100px;
+                opacity: 0;
+                background: url(../images/exam_starstroke.svg);
+                background-size: 80px;
+
+                &.filled {
+                    i {
+                        opacity: 1;
+                    }
+                }
+
+                i {
+                    width: 80px;
+                    height: 80px;
+                    display: block;
+                    background-image: url(../images/exam_starfill.svg);
+                    background-size: 80px;
+                    transition: all .1s;
+                    opacity: 0;
+                }
+
+                &.star1 {
+                    left:10px;
+                }
+
+                &.star2 {
+                    left:110px;
+                }
+
+                &.star3 {
+                    left:209px;
+                }
+
+
+                @media #{$phone} {
+                    width: 70px;
+                    height: 70px;
+                    top:120px;
+                    background-size: 70px;
+
+                    i {
+                        width: 70px;
+                        height: 70px;
+                        background-size: 70px;
+                    }
+
+                    &.star1 {
+                        left:35px;
+                    }
+
+                    &.star2 {
+                        left:116px;
+                    }
+
+                    &.star3 {
+                        left:200px;
+                    }
+                }
+
+            }
+
+            .score {
+                width: 100%;
+                font-size:90px;
+                position: absolute;
+                bottom:125px;
+                text-align: center;
+                font-weight: bold;
+                color:rgb(102,102,102);
+                z-index: 30;
+                opacity: 0;
+                letter-spacing: 10pt;
+
+                @media #{$phone} {
+                    font-size: 53px;
+                    bottom:108px;
+                    letter-spacing: 2pt;
+                }
+
+            }
+        }
+
+        .resultlist {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            z-index: 100;
+
+            .trigger {
+                width:200px;
+                height: 40px;
+                display: inline-block;
+                text-align: center;
+                cursor: pointer;
+                font-size:16px;
+                opacity: 0;
+                transition:.3s all;
+                font-weight: bold;
+
+                &:hover {
+                    opacity:.7 !important;
+                }
+
+                &:active {
+                    opacity:.9 !important;
+                }
+                @extend .centered;
+
+                p {
+                    padding: 6px 15px 6px;
+                    color:#fff;
+                    background:$exam-red;
+                    @extend .noselect;
+                    display: inline-block;
+                }
+            }
+
+            ul {
+                height: 0;
+                width: 480px;
+                padding-right: 20px;
+                overflow: hidden;
+                list-style-type: none;
+                left:50%;
+                margin-left: -250px;
+                position: absolute;
+                bottom:80px;
+
+                li {
+                    border-bottom:2px solid #e6e6e6;
+                    padding:10px 0;
+
+                    .a {
+                        font-weight: bold;
+                        color:$exam-red;
+                    }
+                }
+
+                @media #{$phone} {
+                    width: 300px;
+                    margin-left:-150px;
+                    font-size:14px;
+                    bottom:65px;
+                }
+            }
+
+        }
+
+        .feedback {
+            width: 600px;
+            height: 130px;
+            position: absolute;
+            z-index: 110;
+            bottom:-65px;
+            left:50%;
+            opacity: 0;
+            margin-left: -300px;
+            background: rgba(249,250,255,.9);
+
+            &.open {
+                .trigger i {
+                    background-image: url(../images/exam_feedback_close.svg);
+                }
+            }
+
+            .trigger {
+                width:600px;
+                padding:10px 0;
+                text-align: center;
+                cursor: pointer;
+                font-size:16px;
+                margin-bottom: 15px;
+                transition:.3s all;
+                font-weight: bold;
+                color:$exam-blue;
+                @extend .noselect;
+
+                &:hover {
+                    opacity:.7 !important;
+                }
+
+                &:active {
+                    opacity:.9 !important;
+                }
+
+                i {
+                    width: 30px;
+                    height: 30px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin-right: 10px;
+                    background: url(../images/exam_feedback.svg);
+                    background-size:30px;
+                }
+
+            }
+
+            textarea {
+                width: 96%;
+                height: 100px;
+                padding:10px 2%;
+                resize:none;
+                border:2px solid $exam-blue;
+            }
+
+            .send {
+                width:200px;
+                padding:10px 0;
+                text-align: center;
+                cursor: pointer;
+                font-size:16px;
+                margin:10px auto 0;
+                transition:.3s all;
+                font-weight: bold;
+                color:#fff;
+                background:$exam-blue;
+                @extend .noselect;
+            }
+
+            @media #{$phone} {
+                width: 310px;
+                margin-left: -155px;
+
+                .trigger {
+                    width: 310px;
+                }
+
+                textarea {
+                    width: 95%;
+                    font-size:16px;
+                    padding: 5px 2%;
+                }
+            }
+
+        }
+
+    }
+
+
+
+    .quiz {
+        z-index: 20;
+        overflow: auto;
+        background: $exam-darkblue;
+
+        .whitemask {
+            width: 2000px;
+            height: 2000px;
+            margin-top:-1000px;
+            margin-left: -1000px;
+            position: fixed;
+            z-index: 1000;
+            display: none;
+            top: 50%; left: 50%; bottom: 0; right: 0;
+
+            #whitemaskMin {
+                visibility: hidden;
+            }
+
+            path {
+                color:#f9faff;
+                clip-rule:nonzero;
+                display:inline;
+                overflow:visible;
+                visibility:visible;
+                opacity:1;
+                isolation:auto;
+                mix-blend-mode:normal;
+                color-interpolation:sRGB;
+                color-interpolation-filters:linearRGB;
+                solid-color:#f9faff;
+                solid-opacity:1;
+                fill:#f9faff;
+                fill-opacity:1;
+                fill-rule:nonzero;
+                stroke:none;
+                stroke-width:4;
+                stroke-linecap:round;
+                stroke-linejoin:miter;
+                stroke-miterlimit:4;
+                stroke-dasharray:none;
+                stroke-dashoffset:0;
+                stroke-opacity:1;
+                color-rendering:auto;
+                image-rendering:auto;
+                shape-rendering:auto;
+                text-rendering:auto;
+                enable-background:accumulate
+            }
+        }
+
+        .scenery {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background: $exam-green;
+
+            .title {
+                width: 450px;
+                height: 115px;
+                color:#fff;
+                text-align: center;
+                font-size:28px;
+                line-height: 36px;
+                font-weight: bold;
+                z-index: 20;
+                @extend .centered;
+
+                @media #{$phone} {
+                    width: 300px;
+                    height: 90px;
+                    font-size: 20px;
+                    line-height: 23px;
+                }
+            }
+
+            .anim {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                z-index: 10;
+                overflow: hidden;
+
+                > * {
+                    position: absolute;
+                }
+            }
+        }
+
+        .answers {
+            list-style-type: none;
+
+            li {
+                height: auto;
+                text-align: center;
+                font-size:19px;
+                color: rgb(140,140,140);
+                position: relative;
+                overflow: hidden;
+                cursor: pointer;
+                transition: color .2s;
+
+                /* SCSS color functions can't output rgb */
+                &:nth-child(1) .answerWrap { background-color: rgb(236,237,248) }
+                &:nth-child(2) .answerWrap { background-color: rgb(217,229,247) }
+                &:nth-child(3) .answerWrap { background-color: rgb(199,222,246) }
+                &:nth-child(4) .answerWrap { background-color: rgb(181,214,248) }
+                &:nth-child(5) .answerWrap { background-color: rgb(166,196,230) }
+
+                .answerWrap {
+                    padding:21px 0;
+                    position: relative;
+                    z-index: 50;
+
+                    .answer {
+                        width: 650px;
+                        margin: 0 auto;
+                        transition: color .3s;
+
+                        &:hover {
+                            color:$exam-blue;
+                        }
+                    }
+
+                    @media #{$phone} {
+                        padding:16px 0;
+
+                        .answer {
+                            width: 280px;
+                            font-size:16px;
+                            line-height: 18px;
+                        }
+                    }
+                }
+
+                .check {
+                    width: 100%;
+                    font-weight: bold;
+                    padding:10px 0;
+                    color:#fff;
+                    position: absolute;
+                    z-index: 10;
+                    bottom:0;
+                    background: $exam-blue;
+
+                    p {
+                        transition: .3s opacity;
+                        &:hover {
+                            opacity:.4;
+                        }
+
+                        &:active {
+                            opacity:.7;
+                        }
+                    }
+                }
+            }
+
+        }
+
+    }
+
+
+    .prompt {
+        z-index: 30;
+        overflow: hidden;
+        background: #f9faff;
+
+        &.note {
+            .icon { z-index: 0 }
+            .bck, .f { background: $exam-darkblue; }
+        }
+
+        &.true {
+            .bck, .f, .icon.filled { background: $exam-darkgreen; }
+
+            .tick {
+                width: 14px;
+                background: $exam-darkgreen;
+            }
+
+            .t1 {
+                height: 57px;
+                top:3px;
+                right:-2px;
+                transform-origin: 0% 0%;
+            }
+
+            .t2 {
+                height: 30px;
+                top:16px;
+                right:27px;
+                transform-origin: 100% 100%;
+            }
+        }
+
+        &.false {
+            .bck, .f, .icon.filled { background: $exam-red; }
+
+            .tick {
+                height: 60px;
+                transform-origin: 0% 0%;
+                width: 18px;
+                background: $exam-red;
+            }
+
+            .t1 {
+                height: 60px;
+                top:3px;
+                right:-3px;
+            }
+
+            .t2 {
+                top:16px;
+                right:40px;
+                transform-origin: 0% 0%;
+            }
+        }
+
+
+        .bck {
+            width: 100px;
+            height: 100px;
+            border-radius: 100px;
+            transform: scale(.1);
+            @extend .centered;
+        }
+
+        .icon {
+            width: 155px;
+            height: 155px;
+            border-radius: 155px;
+            z-index: 50;
+            @extend .centered;
+
+            .circle {
+                width: 155px;
+                height: 155px;
+                border-radius: 155px;
+                background: #fff;
+                @extend .centered;
+            }
+
+            .wrap > p {
+                width: 60px;
+                height: 60px;
+                @extend .centered;
+            }
+
+            .tick {
+                display: block;
+                position: absolute;
+                z-index: 10;
+            }
+        }
+
+        .message {
+            text-align: center;
+            width: 480px;
+            height: 0;
+            font-size:19px;
+            line-height: 23px;
+            color:#fff;
+            opacity: 0;
+            z-index: 40;
+            @extend .centered;
+
+            .title {
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            .progress {
+                width: 0;
+                height: 45px;
+                overflow: hidden;
+                text-align: center;
+                cursor: pointer;
+                margin:30px auto 0;
+                font-size:19px;
+                transition:.3s all;
+                font-weight: bold;
+                color:$exam-blue;
+                @extend .noselect;
+
+                .wrap {
+                    position: relative;
+
+                    .f {
+                        width: 50%;
+                        height: 45px;
+                        position: absolute;
+                        z-index: 10;
+
+                        &.f1 {
+                            left: 0;
+                        }
+
+                        &.f2 {
+                            right: 0;
+                        }
+                    }
+
+                    .progressText {
+                        padding-top:11px;
+                        display: block;
+                    }
+                }
+
+                &:hover {
+                    opacity:.7 !important;
+                }
+
+                &:active {
+                    opacity:.9 !important;
+                }
+            }
+        }
+
+        @media #{$phone} {
+
+            .message {
+                width: 280px;
+            }
+
+            &.true, &.false {
+                .message {
+                    height: 30px;
+                    font-size:17px;
+                    line-height: 20px;
+                }
+            }
+
+            &.note {
+                .message {
+                    height: 135px;
+                }
+                .icon {
+                    z-index: 0;
+                }
+            }
+
+        }
+
+    }
+
+
+}

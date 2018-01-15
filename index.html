@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html data-devmode>
+
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport"
+          content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+
+    <link href="styles/lib/normalize.css" rel="stylesheet">
+    <link href="content/styles/story.css" rel="stylesheet">
+</head>
+<body>
+
+
+<noscript>
+    <div class="noscript">
+        <div class="wrap">
+            <p class="noscriptGraph">JavaScript <span><i></i></span></p>
+            The application needs Javascript enabled to start
+        </div>
+    </div>
+</noscript>
+
+
+<div id="storyUi"></div>
+<div id="story"></div>
+
+<script src="scripts/lib/jquery-3.0.min.js"></script>
+<script src='scripts/lib/gsap_TweenMax.min.js'></script>
+<script src="scripts/lib/gsap_TimelineMax.min.js"></script>
+<script src="scripts/lib/SCORM_API_wrapper.js"></script>
+<script src="scripts/lib/jquery.debounce-1.0.5.js"></script>
+<script src="scripts/lib/inheritance.js"></script>
+
+<script src="content/scripts/main.js"></script>
+
+<script src="scripts/story.utils.js"></script>
+<script src="scripts/story.scorm.js"></script>
+<script src="scripts/story.animations.js"></script>
+<script src="scripts/story.main.js"></script>
+
+
+<script>
+    player = new PlayerPlayer('master','en-GB');
+</script>
+
+</body>
+</html>
