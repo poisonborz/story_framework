@@ -10,12 +10,12 @@ It was designed to supply content for e-learning platforms and courses, kiosks a
 
 
 
-#### Quick Guide
+### Quick Guide
 The framework consists of a scaffolding (preloader, selectable components like control UI, interactive exam, displayed on an autoscaled 1000x660px stage) 
 and training content (media assets, styling, translated templates and animation definitions).
 
 
-##### Overall structure
+#### Overall structure
 
 The presentation is structured this way:
 
@@ -28,7 +28,7 @@ The presentation is structured this way:
        - States (separated paused states of movement, like stopgaps for a description to appear, or selectable states like clickable buttons with tooltips)
               
  
- ##### Content
+ #### Content
  The content folder supplies all the assets needed for the presentation.
  
  
